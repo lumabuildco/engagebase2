@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EngageBase — Modern Digital Products & Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Engage<span class="accent">Base</span></a>
+            <nav class="nav-links">
+                <a href="#catalog">Catalog</a>
+                <a href="#deals">Deals</a>
+                <a href="#support">Support</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="cart-btn" class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main SPA Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero container">
+            <div class="hero-text">
+                <h1>Scale Your Workflow with <span class="accent">EngageBase</span></h1>
+                <p>High-performance digital tools, developer kits, and asset bundles built for modern creators and engineering teams.</p>
+                <div class="hero-cta">
+                    <a href="#catalog" class="btn btn-primary">Explore Catalog</a>
+                    <a href="#deals" class="btn btn-secondary">View Promo Deals</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Catalog Section -->
+        <section id="catalog" class="container section">
+            <h2>Product Catalog</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="kits">Kits</button>
+                <button class="filter-btn" data-filter="assets">Assets</button>
+            </div>
+            <div id="product-grid" class="product-grid">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </section>
+
+        <!-- Promo Deals Section -->
+        <section id="deals" class="container section">
+            <h2>Special Promotional Bundles</h2>
+            <div class="deals-banner">
+                <div class="deal-card">
+                    <h3>Full Stack Developer Bundle</h3>
+                    <p>Get all UI kits and workflow accelerators at a 40% discount.</p>
+                    <span class="price-tag">$49.00 <del>$85.00</del></span>
+                    <button class="btn btn-primary add-to-cart-deal" data-id="deal-1" data-name="Full Stack Developer Bundle" data-price="49.00">Claim Deal</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Section (Formspree Integrated) -->
+        <section id="support" class="container section">
+            <h2>Support & Inquiries</h2>
+            <form id="support-form" action="https://formspree.io/f/your-form-id" method="POST" class="support-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="_replyto" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message / Inquiry</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-modal" class="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Shopping Cart</h3>
+                <button id="close-cart" class="close-btn">&times;</button>
+            </div>
+            <div id="cart-items" class="cart-items">
+                <!-- Cart items list -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button id="checkout-btn" class="btn btn-primary checkout-btn">Proceed to Checkout (Stripe)</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2026 EngageBase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
